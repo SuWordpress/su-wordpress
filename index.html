@@ -447,10 +447,10 @@
       transition: background .2s, color .2s;
     }
     .preview-close:hover { background: var(--light-gray); color: var(--dark); }
-    .preview-iframe-wrap { flex: 1; overflow: hidden; position: relative; min-height: 500px; }
+    .preview-iframe-wrap { flex: 1; overflow: hidden; position: relative; min-height: 560px; }
     .preview-iframe-wrap iframe {
       width: 100%; height: 100%; border: none;
-      display: block;
+      display: block; min-height: 560px;
     }
     .preview-loading {
       position: absolute; inset: 0;
@@ -1248,51 +1248,78 @@ function openPreview(url, btn) {
   const modal = document.getElementById('previewModal');
   const frame = document.getElementById('previewFrame');
   const loading = document.getElementById('previewLoading');
+  const blocked = document.getElementById('previewBlocked');
   const urlEl = document.getElementById('previewUrl');
   const titleEl = document.getElementById('previewTitle');
   const visitBtn = document.getElementById('previewVisitBtn');
+  const blockedVisit = document.getElementById('blockedVisitBtn');
 
-  // Get project name from card
   const card = btn.closest('.port-card');
   const title = card ? card.querySelector('h3').textContent : url;
 
+  // Reset state
   frame.src = '';
-  loading.style.display = 'flex';
   frame.style.display = 'none';
+  blocked.style.display = 'none';
+  loading.style.display = 'flex';
   urlEl.textContent = url;
   titleEl.textContent = title;
   visitBtn.href = url;
+  blockedVisit.href = url;
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 
-  // Small delay then load iframe
-  setTimeout(() => { frame.src = url; frame.style.display = 'block'; }, 300);
-}
+  // Try loading iframe — detect if blocked
+  let loaded = false;
+  const timeout = setTimeout(() => {
+    if (!loaded) showBlocked(url);
+  }, 4000);
 
-function iframeLoaded() {
-  document.getElementById('previewLoading').style.display = 'none';
-}
-
-function closePreview(e) {
-  if (e.target === document.getElementById('previewModal')) {
-    closePreviewBtn();
-  }
-}
-
-function closePreviewBtn() {
-  const modal = document.getElementById('previewModal');
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
   setTimeout(() => {
-    document.getElementById('previewFrame').src = '';
+    frame.onload = function() {
+      loaded = true;
+      clearTimeout(timeout);
+      // Try to detect X-Frame block (blank/white iframe)
+      try {
+        const h = frame.contentWindow.document.body.scrollHeight;
+        if (h < 50) { showBlocked(url); return; }
+      } catch(e) {
+        // Cross-origin — can't check, assume it loaded
+      }
+      loading.style.display = 'none';
+      frame.style.display = 'block';
+    };
+    frame.onerror = function() {
+      loaded = true;
+      clearTimeout(timeout);
+      showBlocked(url);
+    };
+    frame.src = url;
   }, 300);
 }
 
-// ESC key closes modal
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closePreviewBtn();
-});
+function showBlocked(url) {
+  document.getElementById('previewLoading').style.display = 'none';
+  document.getElementById('previewFrame').style.display = 'none';
+  document.getElementById('previewBlocked').style.display = 'flex';
+}
+
+function iframeLoaded() {
+  // handled in openPreview
+}
+
+function closePreview(e) {
+  if (e.target === document.getElementById('previewModal')) closePreviewBtn();
+}
+
+function closePreviewBtn() {
+  document.getElementById('previewModal').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { document.getElementById('previewFrame').src = ''; }, 300);
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreviewBtn(); });
 
 /* PORTFOLIO FILTER */
 function filterPort(btn, cat) {
@@ -1352,6 +1379,21 @@ async function submitForm() {
         <div class="spinner"></div>
         <p>Loading preview...</p>
       </div>
+
+      <!-- Blocked fallback -->
+      <div id="previewBlocked" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:3rem;text-align:center;background:var(--off);height:100%;min-height:400px">
+        <div style="width:60px;height:60px;background:rgba(23,62,99,.08);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <i class="fa-solid fa-shield-halved" style="font-size:1.5rem;color:var(--navy)"></i>
+        </div>
+        <div>
+          <p style="font-weight:700;font-size:1rem;color:var(--navy-dark);margin-bottom:.4rem">Preview Blocked by Website</p>
+          <p style="font-size:.82rem;color:var(--gray);max-width:320px;line-height:1.7;font-weight:300">This website has security settings that prevent it from being previewed in a frame. Click the button below to open it directly.</p>
+        </div>
+        <a id="blockedVisitBtn" href="#" target="_blank" class="btn btn-navy" style="font-size:.85rem">
+          Open Website <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.75rem"></i>
+        </a>
+      </div>
+
       <iframe id="previewFrame" src="" onload="iframeLoaded()" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
     </div>
     <div class="preview-footer">
