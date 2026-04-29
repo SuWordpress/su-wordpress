@@ -1110,7 +1110,7 @@
             <div class="cd-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
               <h4>Email</h4>
-              <a href="mailto:su_wordpress@email.com">su_wordpress@email.com</a>
+              <a href="mailto:adekunleayobami500@gmail.com">adekunleayobami500@gmail.com</a>
               <p style="font-size:.72rem;color:rgba(255,255,255,.3);font-weight:300;margin-top:.1rem">Response within 24 hours</p>
             </div>
           </div>
@@ -1192,7 +1192,7 @@
             <button onclick="submitForm()" class="btn btn-navy" style="width:100%; justify-content:center; padding:1rem">Send Message <i class="fa-solid fa-arrow-right" style="font-size:.75rem"></i></button>
             <div style="display:flex;gap:.6rem;margin-top:.8rem">
               <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;background:#25d366;color:white;padding:.6rem;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-              <a href="mailto:su_wordpress@email.com" style="flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;background:var(--off);border:1px solid var(--light-gray);color:var(--dark);padding:.6rem;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none"><i class="fa-solid fa-envelope"></i> Email Direct</a>
+              <a href="mailto:adekunleayobami500@gmail.com" style="flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;background:var(--off);border:1px solid var(--light-gray);color:var(--dark);padding:.6rem;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none"><i class="fa-solid fa-envelope"></i> Email Direct</a>
             </div>
             <p style="color:var(--gray);font-size:.68rem;margin-top:.6rem;text-align:center;font-weight:300">Prefer Fiverr? <a href="https://www.fiverr.com/su_wordpress" target="_blank" style="color:var(--navy)">fiverr.com/su_wordpress</a></p>
           </div>
@@ -1404,14 +1404,14 @@ async function submitForm() {
   const m = document.getElementById('cm').value.trim();
   if (!n || !e || !m) { alert('Please fill in your name, email and message.'); return; }
   try {
-    await fetch('https://formspree.io/f/suwordpress', {
+    await fetch('https://formspree.io/f/mjgjnebb', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ name: n, email: e, service: s, budget: b, message: m, _replyto: e, _subject: 'New Project Enquiry from ' + n })
     });
   } catch(err) {
     const body = encodeURIComponent('Name: '+n+'\nEmail: '+e+'\nService: '+s+'\nBudget: '+b+'\nMessage: '+m);
-    window.open('mailto:su_wordpress@email.com?subject=Project Enquiry from '+encodeURIComponent(n)+'&body='+body);
+    window.open('mailto:adekunleayobami500@gmail.com?subject=Project Enquiry from '+encodeURIComponent(n)+'&body='+body);
   }
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
