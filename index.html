@@ -42,9 +42,10 @@
       --navy: #173E63;
       --navy-dark: #0f2a45;
       --navy-light: #1e4f7e;
-      --amber: #2B7FFF;
+      --amber: #6BA5FF;
       --amber-dark: #0166FE;
-      --amber-light: #6BA5FF;
+      --amber-light: #9CC6FF;
+      --amber-ink: #0B5ED7;   /* accent on LIGHT backgrounds */
       --black: #0a0a0a;
       --dark: #111827;
       --dark2: #1f2937;
@@ -91,7 +92,7 @@
     .nav-links a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .82rem; font-weight: 500; letter-spacing: .3px; transition: color .2s; }
     .nav-links a:hover { color: var(--amber); }
     .nav-cta {
-      background: var(--amber); color: var(--navy-dark) !important;
+      background: var(--amber-dark); color: #ffffff !important;
       padding: .5rem 1.3rem; border-radius: 6px;
       font-weight: 600 !important; font-size: .82rem !important;
       transition: background .2s !important;
@@ -126,7 +127,7 @@
       transition: transform .15s, box-shadow .2s, background .2s;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
-    .btn-amber { background: var(--amber); color: #ffffff; }
+    .btn-amber { background: var(--amber-dark); color: #ffffff; }
     .btn-amber:hover { background: var(--amber-dark); }
     .btn-navy { background: var(--navy); color: var(--white); }
     .btn-navy:hover { background: var(--navy-light); }
@@ -150,7 +151,7 @@
       content: '';
       position: absolute; top: -100px; right: -100px;
       width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(43,127,255,.1) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(107,165,255,.1) 0%, transparent 65%);
       pointer-events: none;
     }
     .hero::after {
@@ -176,8 +177,8 @@
     .hero-content {}
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(43,127,255,.12);
-      border: 1px solid rgba(43,127,255,.3);
+      background: rgba(107,165,255,.12);
+      border: 1px solid rgba(107,165,255,.3);
       padding: .3rem .9rem; border-radius: 100px;
       font-size: .7rem; color: var(--amber);
       font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
@@ -230,13 +231,13 @@
       display: flex; align-items: center; justify-content: center;
       font-family: var(--fs); font-weight: 800; font-size: 1.8rem; color: white;
       margin-bottom: 1.2rem;
-      box-shadow: 0 0 0 4px rgba(43,127,255,.2);
+      box-shadow: 0 0 0 4px rgba(107,165,255,.2);
     }
     .hero-card-name { font-family: var(--fs); font-weight: 700; font-size: 1.2rem; color: white; margin-bottom: .2rem; }
     .hero-card-role { font-size: .78rem; color: var(--amber); font-weight: 500; letter-spacing: .5px; margin-bottom: 1.5rem; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
     .skill-tag {
-      background: rgba(43,127,255,.1); border: 1px solid rgba(43,127,255,.2);
+      background: rgba(107,165,255,.1); border: 1px solid rgba(107,165,255,.2);
       color: var(--amber); font-size: .68rem; padding: .25rem .7rem;
       border-radius: 100px; font-weight: 500; letter-spacing: .5px;
     }
@@ -264,9 +265,9 @@
     @keyframes floatUD { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
 
     /* ── TICKER ── */
-    .ticker { background: var(--amber); padding: .8rem 0; overflow: hidden; }
+    .ticker { background: var(--amber-dark); padding: .8rem 0; overflow: hidden; }
     .ticker-track { display: flex; animation: ticker 30s linear infinite; width: max-content; }
-    .ticker-item { font-family: var(--fs); font-size: .92rem; font-weight: 700; color: var(--navy-dark); letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; padding: 0 2rem; display: flex; align-items: center; gap: .7rem; }
+    .ticker-item { font-family: var(--fs); font-size: .92rem; font-weight: 700; color: #ffffff; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; padding: 0 2rem; display: flex; align-items: center; gap: .7rem; }
     .ticker-item::after { content: '◆'; font-size: .45rem; opacity: .5; }
     @keyframes ticker { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
 
@@ -282,7 +283,7 @@
     .about-img-wrap::before {
       content: ''; position: absolute; top: -40px; right: -40px;
       width: 200px; height: 200px; border-radius: 50%;
-      background: rgba(43,127,255,.1);
+      background: rgba(107,165,255,.1);
     }
     .about-big-initial {
       font-family: var(--fs); font-size: 8rem; font-weight: 800;
@@ -290,10 +291,10 @@
       position: absolute; bottom: -1rem; right: 1rem;
     }
     .about-name-display { font-family: var(--fs); font-weight: 800; font-size: 1.8rem; color: white; margin-bottom: .3rem; }
-    .about-role-display { font-size: .8rem; color: var(--amber); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 2rem; }
+    .about-role-display { font-size: .8rem; color: var(--amber-ink); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; margin-bottom: 2rem; }
     .about-skills-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
     .about-skills-list li { display: flex; align-items: center; gap: .7rem; font-size: .82rem; color: rgba(255,255,255,.7); font-weight: 300; }
-    .about-skills-list li i { color: var(--amber); width: 14px; }
+    .about-skills-list li i { color: var(--amber-ink); width: 14px; }
     .about-exp-badges {
       display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
       margin-top: 2rem;
@@ -329,10 +330,10 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform .4s;
     }
-    .service-card:hover { border-color: rgba(43,127,255,.2); transform: translateY(-4px); }
+    .service-card:hover { border-color: rgba(107,165,255,.2); transform: translateY(-4px); }
     .service-card:hover::before { transform: scaleX(1); }
     .service-num { font-family: var(--fs); font-size: 4rem; font-weight: 800; color: rgba(255,255,255,.04); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem; }
-    .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.2rem; background: rgba(43,127,255,.1); color: var(--amber); }
+    .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.2rem; background: rgba(107,165,255,.1); color: var(--amber); }
     .service-card h3 { font-family: var(--fs); font-weight: 700; font-size: 1.1rem; color: white; margin-bottom: .6rem; }
     .service-card p { font-size: .85rem; color: rgba(255,255,255,.45); line-height: 1.75; font-weight: 300; }
     .service-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
@@ -360,7 +361,7 @@
     .port-overlay a { color: white; font-size: .82rem; font-weight: 600; text-decoration: none; border: 1.5px solid white; padding: .5rem 1.2rem; border-radius: 100px; transition: background .2s; }
     .port-overlay a:hover { background: rgba(255,255,255,.1); }
     .port-body { padding: 1.5rem; }
-    .port-type { font-size: .65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: .4rem; display: block; }
+    .port-type { font-size: .65rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--amber-ink); margin-bottom: .4rem; display: block; }
     .port-card h3 { font-family: var(--fs); font-weight: 700; font-size: 1rem; margin-bottom: .4rem; }
     .port-card p { font-size: .8rem; color: var(--gray); font-weight: 300; line-height: 1.65; }
     .port-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
@@ -379,7 +380,7 @@
       display: flex; flex-direction: column;
       transition: border-color .3s, transform .3s;
     }
-    .tst-card:hover { border-color: rgba(43,127,255,.45); transform: translateY(-4px); }
+    .tst-card:hover { border-color: rgba(107,165,255,.45); transform: translateY(-4px); }
     .tst-stars { color: var(--amber); font-size: .82rem; letter-spacing: 2px; margin-bottom: .9rem; }
     .tst-quote {
       color: rgba(255,255,255,.72); font-size: .85rem;
@@ -402,8 +403,8 @@
     .tst-src {
       margin-left: auto; font-size: .62rem; font-weight: 600;
       letter-spacing: 1px; text-transform: uppercase;
-      color: var(--amber); background: rgba(43,127,255,.1);
-      border: 1px solid rgba(43,127,255,.25);
+      color: var(--amber); background: rgba(107,165,255,.1);
+      border: 1px solid rgba(107,165,255,.25);
       padding: .25rem .6rem; border-radius: 100px; white-space: nowrap;
     }
     @media (max-width: 900px) { .tst-grid { grid-template-columns: 1fr; } }
@@ -433,7 +434,7 @@
     }
     .contact-detail { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
     .contact-detail:last-child { border-bottom: none; }
-    .cd-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(43,127,255,.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--amber); font-size: .85rem; }
+    .cd-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(107,165,255,.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--amber); font-size: .85rem; }
     .contact-detail h4 { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: rgba(255,255,255,.4); margin-bottom: .2rem; }
     .contact-detail p, .contact-detail a { font-size: .88rem; color: rgba(255,255,255,.75); font-weight: 300; text-decoration: none; line-height: 1.6; }
     .contact-detail a:hover { color: var(--amber); }
@@ -445,7 +446,7 @@
       display: flex; flex-direction: column; align-items: center; gap: .5rem;
       text-decoration: none; transition: border-color .2s, background .2s, transform .2s;
     }
-    .social-card:hover { border-color: var(--amber); background: rgba(43,127,255,.06); transform: translateY(-2px); }
+    .social-card:hover { border-color: var(--amber); background: rgba(107,165,255,.06); transform: translateY(-2px); }
     .social-card i { font-size: 1.2rem; }
     .social-card span { font-size: .68rem; color: rgba(255,255,255,.45); font-weight: 300; }
     /* Form */
@@ -575,7 +576,7 @@
     }
     .port-overlay a:hover, .port-overlay button:hover { background: rgba(255,255,255,.15); }
     .port-overlay a.visit-btn { border-color: var(--amber); color: var(--amber); }
-    .port-overlay a.visit-btn:hover { background: rgba(43,127,255,.15); }
+    .port-overlay a.visit-btn:hover { background: rgba(107,165,255,.15); }
 
     /* ── FOOTER ── */
     footer { background: var(--black); padding: 50px 5% 30px; }
@@ -589,7 +590,7 @@
     .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.06); margin: 0 0 1.5rem; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-bottom p { font-size: .75rem; color: rgba(255,255,255,.25); font-weight: 300; }
-    .footer-bottom span { font-size: .72rem; color: rgba(43,127,255,.4); }
+    .footer-bottom span { font-size: .72rem; color: rgba(107,165,255,.4); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -707,9 +708,6 @@
   </script>
 </head>
 <body>
-<div style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111827;color:#fff;font:600 12px/1.5 system-ui,sans-serif;padding:.7rem 1rem;text-align:center;border-top:2px solid #2B7FFF">
-  PREVIEW ONLY — blue palette test. Not the live site. Compare against index.html, then pick one.
-</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -769,7 +767,7 @@
     <div class="hero-visual rv d2">
       <div class="float-badge fb-1"><i class="fa-brands fa-wordpress"></i> WordPress Expert</div>
       <div class="hero-card">
-        <img src="screenshots/profile-avatar.jpg" loading="lazy" alt="Adekunle Ayobami" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;margin-bottom:1.2rem;box-shadow:0 0 0 4px rgba(43,127,255,.25);display:block"/>
+        <img src="screenshots/profile-avatar.jpg" loading="lazy" alt="Adekunle Ayobami" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;margin-bottom:1.2rem;box-shadow:0 0 0 4px rgba(107,165,255,.25);display:block"/>
         <div class="hero-card-name">Adekunle Ayobami</div>
         <div class="hero-card-role">WordPress Designer, Developer & SEO</div>
         <div class="skill-tags">
@@ -837,9 +835,9 @@
         </div>
       </div>
       <div class="rv-r">
-        <span class="sec-label" style="color:var(--amber)">About Me</span>
+        <span class="sec-label" style="color:var(--amber-ink)">About Me</span>
         <h2 class="sec-title">I Build Websites That<br/><span class="navy">Work for Your Business</span></h2>
-        <div class="divider" style="background:var(--amber)"></div>
+        <div class="divider" style="background:var(--amber-ink)"></div>
         <p class="sec-sub" style="margin-bottom:1.2rem">I'm Adekunle Ayobami — a WordPress designer and developer based in Nigeria, working with clients worldwide through Fiverr and direct referrals.</p>
         <p class="sec-sub" style="margin-bottom:1.2rem">I help businesses design websites that are user-friendly, mobile-responsive, and built to rank. I don't just focus on design — I add the features that make your website actually convert visitors into customers.</p>
         <p class="sec-sub" style="margin-bottom:2rem">Whether you need a brand new website, a redesign, custom functionality, or just need existing errors fixed — I've got you covered.</p>
@@ -939,9 +937,9 @@
 <section class="portfolio-section sec" id="portfolio">
   <div class="wrap">
     <div class="rv" style="margin-bottom:0">
-      <span class="sec-label" style="color:var(--amber)">My Work</span>
+      <span class="sec-label" style="color:var(--amber-ink)">My Work</span>
       <h2 class="sec-title" style="color:var(--navy-dark)">Recent Projects</h2>
-      <div class="divider" style="background:var(--amber)"></div>
+      <div class="divider" style="background:var(--amber-ink)"></div>
       <p class="sec-sub">A selection of websites I've designed and developed for clients across various industries.</p>
     </div>
     <!-- Filter tabs -->
@@ -1199,7 +1197,7 @@
 
       <!-- Training -->
       <div class="port-card rv d1" data-cat="training">
-        <div class="port-thumb" style="background:linear-gradient(135deg,#173E63,#2B7FFF);padding:0">
+        <div class="port-thumb" style="background:linear-gradient(135deg,#173E63,#0166FE);padding:0">
           <img src="screenshots/training-class.jpg" loading="lazy" alt="WordPress Training" style="width:100%;height:100%;object-fit:cover;object-position:top"/>
           <div class="port-overlay"><button onclick="void(0)" style="opacity:.5;cursor:default">No Preview</button></div>
         </div>
@@ -1280,9 +1278,9 @@
   <div class="wrap">
     <div class="faq-layout">
       <div class="rv-l">
-        <span class="sec-label" style="color:var(--amber)">FAQ</span>
+        <span class="sec-label" style="color:var(--amber-ink)">FAQ</span>
         <h2 class="sec-title" style="color:var(--navy-dark)">Frequently Asked Questions</h2>
-        <div class="divider" style="background:var(--amber)"></div>
+        <div class="divider" style="background:var(--amber-ink)"></div>
         <p class="sec-sub" style="margin-bottom:2rem">Have a question not listed here? Feel free to reach out directly — I'm always happy to help.</p>
         <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+have+a+question+about+your+services." target="_blank" class="btn btn-navy"><i class="fa-brands fa-whatsapp" style="font-size:.9rem"></i> Ask Me on WhatsApp</a>
       </div>
