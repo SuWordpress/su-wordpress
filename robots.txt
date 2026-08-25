@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suwordpress.github.io/su-wordpress/sitemap.xml

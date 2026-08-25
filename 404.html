@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Not Found | Adekunle Ayobami</title>
+  <meta name="robots" content="noindex, follow"/>
+  <meta name="theme-color" content="#0f2a45"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230f2a45%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-family=%27Arial,sans-serif%27 font-size=%2758%27 font-weight=%27bold%27 fill=%27%23F69E1F%27 text-anchor=%27middle%27%3EA%3C/text%3E%3C/svg%3E"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy-dark: #0f2a45;
+      --navy-light: #1e4f7e;
+      --amber: #F69E1F;
+      --amber-dark: #d4880e;
+      --fs: 'Bricolage Grotesque', sans-serif;
+      --fb: 'Plus Jakarta Sans', sans-serif;
+    }
+    body {
+      font-family: var(--fb);
+      background: var(--navy-dark);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem 5%;
+      position: relative; overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    body::after {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 620px; height: 620px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,158,31,.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .box { position: relative; z-index: 1; text-align: center; max-width: 560px; }
+    .code {
+      font-family: var(--fs); font-weight: 800;
+      font-size: clamp(5rem, 18vw, 9rem);
+      color: var(--amber); line-height: 1; letter-spacing: -2px;
+    }
+    h1 {
+      font-family: var(--fs); font-weight: 800;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      color: #fff; margin: .6rem 0 1rem;
+    }
+    p { color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.85; font-size: .95rem; margin-bottom: 2.2rem; }
+    .actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .85rem 2rem; border-radius: 6px;
+      font-weight: 600; font-size: .88rem; text-decoration: none;
+      transition: transform .15s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amber { background: var(--amber); color: var(--navy-dark); }
+    .btn-amber:hover { background: var(--amber-dark); }
+    .btn-outline { border: 2px solid rgba(255,255,255,.35); color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="code">404</div>
+    <h1>This page took a wrong turn</h1>
+    <p>The page you're looking for doesn't exist or has been moved. Let's get you back to the work.</p>
+    <div class="actions">
+      <a href="/su-wordpress/" class="btn btn-amber">Back to Portfolio</a>
+      <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" class="btn btn-outline">Message on WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>
