@@ -365,6 +365,45 @@
     .port-coming p { font-size: .9rem; color: var(--gray); font-weight: 300; margin-bottom: 1rem; }
 
     /* ── FAQ ── */
+    /* ── TESTIMONIALS ── */
+    .tst-section { background: var(--dark); }
+    .tst-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .tst-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 14px; padding: 1.8rem;
+      display: flex; flex-direction: column;
+      transition: border-color .3s, transform .3s;
+    }
+    .tst-card:hover { border-color: rgba(246,158,31,.45); transform: translateY(-4px); }
+    .tst-stars { color: var(--amber); font-size: .82rem; letter-spacing: 2px; margin-bottom: .9rem; }
+    .tst-quote {
+      color: rgba(255,255,255,.72); font-size: .85rem;
+      font-weight: 300; line-height: 1.8; flex: 1;
+    }
+    .tst-foot {
+      display: flex; align-items: center; gap: .8rem;
+      margin-top: 1.4rem; padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .tst-av {
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--navy-light), var(--amber));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--fs); font-weight: 800; font-size: 1rem; color: white;
+    }
+    .tst-who { line-height: 1.3; }
+    .tst-name { color: white; font-weight: 600; font-size: .82rem; display: block; }
+    .tst-meta { color: rgba(255,255,255,.4); font-size: .68rem; font-weight: 300; }
+    .tst-src {
+      margin-left: auto; font-size: .62rem; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--amber); background: rgba(246,158,31,.1);
+      border: 1px solid rgba(246,158,31,.25);
+      padding: .25rem .6rem; border-radius: 100px; white-space: nowrap;
+    }
+    @media (max-width: 900px) { .tst-grid { grid-template-columns: 1fr; } }
+
     .faq-section { background: var(--white); }
     .faq-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
     .faq-list {}
@@ -605,6 +644,62 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I offer WordPress website design (from scratch or templates), custom feature development, WooCommerce store setup, and fixing any WordPress errors or issues your website is facing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard WordPress website typically takes 3–7 days depending on complexity. A simple landing page can be done in 1–2 days. I'll give you a clear timeline before we start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with clients outside Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! I work with clients worldwide through Fiverr and direct contact. I communicate clearly and am flexible with time zones to ensure smooth project delivery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you fix my existing WordPress website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. I handle all kinds of WordPress errors — white screen of death, plugin conflicts, slow loading, security issues, broken layouts, and more. Just describe the problem and I'll fix it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information do you need to start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I'll need your business name, what you do, your preferred design style (or reference sites), any content/images you have, and your goals for the website. We'll discuss everything before I begin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I pay for your services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can hire me directly through Fiverr (safest option with buyer protection) or we can arrange payment through other methods. I'll always discuss pricing transparently before any work begins."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -619,6 +714,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" class="nav-cta">Hire Me on WhatsApp</a></li>
@@ -630,6 +726,7 @@
   <a href="#about" onclick="closM()">About</a>
   <a href="#services" onclick="closM()">Services</a>
   <a href="#portfolio" onclick="closM()">Portfolio</a>
+  <a href="#testimonials" onclick="closM()">Reviews</a>
   <a href="#faq" onclick="closM()">FAQ</a>
   <a href="#contact" onclick="closM()">Contact</a>
   <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" onclick="closM()" style="color:var(--amber)">WhatsApp Me →</a>
@@ -653,7 +750,7 @@
         <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp" style="font-size:1rem"></i> WhatsApp Me</a>
       </div>
       <div class="hero-stats rv">
-        <div class="hero-stat"><span class="hero-stat-num">16+</span><p class="hero-stat-lbl">Projects completed</p></div>
+        <div class="hero-stat"><span class="hero-stat-num">19+</span><p class="hero-stat-lbl">Projects completed</p></div>
         <div class="hero-stat"><span class="hero-stat-num">100%</span><p class="hero-stat-lbl">Client satisfaction</p></div>
         <div class="hero-stat"><span class="hero-stat-num">3+</span><p class="hero-stat-lbl">Years experience</p></div>
       </div>
@@ -1108,6 +1205,60 @@
     <div class="port-coming rv" style="margin-top:2.5rem">
       <p>All projects are live — click "View Live" on any card to see the work.</p>
       <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" class="btn btn-navy"><i class="fa-brands fa-whatsapp" style="font-size:.9rem"></i> Let's Work Together</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="tst-section sec" id="testimonials">
+  <div class="wrap">
+    <div class="rv" style="text-align:center">
+      <span class="sec-label" style="color:var(--amber)">Client Feedback</span>
+      <h2 class="sec-title" style="color:white; margin:0 auto">What Clients Say</h2>
+      <div class="divider" style="background:var(--amber); margin:1rem auto 0"></div>
+      <p class="sec-sub" style="margin:1.5rem auto 0; color:rgba(255,255,255,.5)">Verified reviews from clients on Google and Fiverr.</p>
+    </div>
+    <div class="tst-grid">
+      <div class="tst-card rv d1">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">Adekunle was an absolute pleasure to work with. He was extremely responsive, consistently proactive, and clearly very knowledgeable about WordPress, product variants, and bundle setups. He took ownership of the work, paid attention to details, and delivered exactly what was needed — on time and done right. I&rsquo;ll absolutely be coming back for future projects.</p>
+        <div class="tst-foot">
+          <div class="tst-av">A</div>
+          <div class="tst-who">
+            <span class="tst-name">asgoodasitgetx</span>
+            <span class="tst-meta">WooCommerce project &middot; United States</span>
+          </div>
+          <span class="tst-src">Fiverr</span>
+        </div>
+      </div>
+      <div class="tst-card rv d2">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">Really happy with the website Su_Wordpress built for our limo business. It looks clean, professional and works well on the phone too. He was easy to communicate with and made the changes we asked for without any problems.</p>
+        <div class="tst-foot">
+          <div class="tst-av">B</div>
+          <div class="tst-who">
+            <span class="tst-name">Boston Limo Car Service</span>
+            <span class="tst-meta">Website design &middot; Boston, MA</span>
+          </div>
+          <span class="tst-src">Google</span>
+        </div>
+      </div>
+      <div class="tst-card rv d3">
+        <div class="tst-stars">★★★★★</div>
+        <p class="tst-quote">Su_Wordpress did a great job on our limo website. He understood what we needed and made the site look clean and professional. The whole process was easy and he was quick to make the changes we asked for.</p>
+        <div class="tst-foot">
+          <div class="tst-av">C</div>
+          <div class="tst-who">
+            <span class="tst-name">Car Service In Boston</span>
+            <span class="tst-meta">Website + SEO &middot; Boston, MA</span>
+          </div>
+          <span class="tst-src">Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="rv" style="text-align:center;margin-top:2.5rem">
+      <a href="https://wa.me/2349161880250?text=Hi+Adekunle%2C+I+found+your+portfolio+and+I%27d+like+to+discuss+a+project+with+you." target="_blank" class="btn btn-amber"><i class="fa-brands fa-whatsapp" style="font-size:1rem"></i> Start Your Project</a>
     </div>
   </div>
 </section>
